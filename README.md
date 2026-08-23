@@ -2,24 +2,31 @@
 
 > A modern full-stack movie ticket booking platform built with React, Node.js, Express, MongoDB, Clerk, and the TMDB API.
 
-![SidFlix Banner](https://img.shields.io/badge/SidFlix-Movie%20Booking-ff2d55?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Frontend-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-Backend-000000?style=for-the-badge&logo=express)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Clerk](https://img.shields.io/badge/Clerk-Authentication-6C47FF?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel)
 
 ## 🌐 Live Demo
 
-🚀 **Frontend:** [SidFlix Live](https://sid-flix-unthinkable-solutions.vercel.app)
+🚀 **Frontend:** https://sid-flix-unthinkable-solutions.vercel.app
+
+> The frontend is currently deployed on Vercel.
 
 ---
 
 ## 📌 About The Project
 
-**SidFlix** is a modern movie ticket booking platform designed to provide users with a seamless cinema booking experience.
+**SidFlix** is a modern full-stack movie ticket booking platform designed to provide a seamless cinema booking experience.
 
-Users can browse movies, explore available shows, select their preferred seats, manage favourite movies, and securely access their accounts. The platform also includes an **admin panel** for managing movie shows.
+The application allows users to explore movies and available shows, select preferred show timings, choose seats through an interactive seat layout, manage favourite movies, and access their accounts securely.
 
-The project follows a full-stack architecture with a separate **React frontend** and **Node.js/Express backend**.
+The platform also includes protected admin functionality for managing movie shows and verifying admin access.
+
+SidFlix follows a full-stack architecture with a separate React frontend and Node.js/Express backend.
 
 ---
 
@@ -28,42 +35,27 @@ The project follows a full-stack architecture with a separate **React frontend**
 ### 👤 User Features
 
 - 🎬 Browse available movies and shows
-- 🔍 Explore movie details
-- ❤️ Add and manage favourite movies
-- 🪑 Interactive seat selection
+- 🔍 Explore movie and show details
 - ⏰ View available show timings
+- 🪑 Interactive seat selection
+- ❤️ Add and manage favourite movies
 - 🎟️ Movie ticket booking workflow
-- 🔐 Secure authentication with Clerk
-- 📱 Responsive modern UI
+- 🔐 Secure user authentication
+- 📱 Responsive and modern user interface
 
 ### 🛠️ Admin Features
 
-- 👨‍💼 Admin authorization and protected routes
+- 👨‍💼 Protected admin access
+- 🔒 Admin authorization verification
 - 🎥 Manage movie shows
 - ➕ Create and manage available screenings
-- 🔒 Secure admin access verification
 
-### 🌐 API Integration
+### 🎞️ Movie Data
 
-- 🎞️ Movie data powered by TMDB API
-- 🖼️ Dynamic movie posters and images
-- 🔄 Backend API integration with Axios
-
----
-
-## 🖼️ Application Preview
-
-### 🎬 Movie Booking Experience
-
-Users can select their preferred show timing and choose seats through an interactive seat selection interface.
-
-### 🪑 Seat Selection
-
-- Available seats
-- Selected seats
-- Multiple seating sections
-- Interactive booking experience
-- Proceed to checkout functionality
+- TMDB API integration
+- Dynamic movie information
+- Movie posters and images
+- Centralized image base URL configuration
 
 ---
 
@@ -72,23 +64,25 @@ Users can select their preferred show timing and choose seats through an interac
 ```text
 SidFlix/
 │
-├── client/                 # React + Vite Frontend
+├── client/                         # React + Vite Frontend
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   └── assets/
+│   │   ├── assets/                 # Images and static assets
+│   │   ├── components/             # Reusable UI components
+│   │   ├── context/                # Global App Context
+│   │   ├── pages/                  # Application pages
+│   │   └── ...
 │   │
 │   ├── package.json
 │   └── vite.config.js
 │
-├── server/                 # Node.js + Express Backend
-│   ├── configs/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
+├── server/                         # Node.js + Express Backend
+│   ├── configs/                    # Database configuration
+│   ├── controllers/                # Application logic
+│   ├── middleware/                 # Custom middleware
+│   ├── models/                     # MongoDB models
+│   ├── routes/                     # API routes
 │   ├── server.js
 │   └── package.json
 │
-└── README.md
+├── README.md
+└── .gitignore
