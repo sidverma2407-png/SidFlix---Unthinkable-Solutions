@@ -18,15 +18,14 @@
 
 ## 🚀 Live Demo
 
-🌐 **Frontend:**  
-https://sid-flix-unthinkable-solutions.vercel.app
+🌐 **Frontend:** https://sid-flix-unthinkable-solutions.vercel.app
 
 ---
 
 # 📸 Project Preview
 
 <p align="center">
-  <img src="./assets/Homepage.png" alt="SidFlix Homepage" width="100%" />
+  <img src="./assests/Homepage.png" alt="SidFlix Homepage" width="100%" />
 </p>
 
 ### 🏠 Modern Cinema Experience
@@ -36,7 +35,7 @@ SidFlix provides a modern and visually engaging homepage where users can discove
 ---
 
 <p align="center">
-  <img src="./assets/Trailers.png" alt="SidFlix Trailers" width="100%" />
+  <img src="./assests/Trailers.png" alt="SidFlix Trailers" width="100%" />
 </p>
 
 ### 🎬 Watch Movie Trailers
@@ -46,7 +45,7 @@ Users can explore and watch trailers of upcoming and popular movies directly thr
 ---
 
 <p align="center">
-  <img src="./assets/SeatSelection.png" alt="SidFlix Seat Selection" width="100%" />
+  <img src="./assests/SeatSelection.png" alt="SidFlix Seat Selection" width="100%" />
 </p>
 
 ### 💺 Interactive Seat Selection
@@ -110,13 +109,15 @@ Users can select their preferred seats through an interactive cinema seat layout
 ```text
 SidFlix/
 │
-├── assets/
+├── assests/
 │   ├── Homepage.png
 │   ├── Trailers.png
 │   └── SeatSelection.png
 │
-├── client/                 # React + Vite Frontend
+├── client/
+│   └── React + Vite Frontend
 │
-├── server/                 # Node.js + Express Backend
+├── server/
+│   └── Node.js + Express Backend
 │
 └── README.md
