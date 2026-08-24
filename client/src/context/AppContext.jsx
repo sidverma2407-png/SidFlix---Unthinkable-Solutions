@@ -4,7 +4,7 @@ import { useAuth, useUser } from "@clerk/clerk-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;
 
 export const AppContext = createContext();
 
@@ -79,6 +79,7 @@ export const AppProvider = ({ children }) => {
         error.response?.data || error.message
       );
       setShows([]);
+      toast.error("Unable to fetch SidFlix shows");
     }
   };
 
