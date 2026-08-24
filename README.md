@@ -10,7 +10,7 @@ SidFlix allows users to discover movies, explore show details, select show timin
 
 ### 🎥 Frontend
 
-🔗 **Vercel:** https://sid-flix-unthinkable-solutions.vercel.app
+🔗 **Vercel:** https://sid-flix-unthinkable-solutions-4ksp-711lb53q2-sid007-v.vercel.app/
 
 ### ⚙️ Backend API
 
