@@ -2,7 +2,7 @@
 
 > A modern full-stack movie ticket booking platform built with React, Node.js, Express, MongoDB, Clerk, Stripe, and TMDB.
 
-SidFlix allows users to discover movies, explore show details, select show timings and seats, and book movie tickets through a modern and responsive interface.
+SidFlix allows users to discover movies, explore show details, watch trailers, select show timings and seats, and book movie tickets through a modern and responsive interface.
 
 ---
 
@@ -18,10 +18,27 @@ SidFlix allows users to discover movies, explore show details, select show timin
 
 ---
 
+## 🖼️ Screenshots
+
+### 🏠 Homepage
+
+![SidFlix Homepage](./assets/Homepage(1).png)
+
+### 🎥 Trailers
+
+![SidFlix Trailers](./assets/Trailers(1).png)
+
+### 💺 Seat Selection
+
+![SidFlix Seat Selection](./assets/SeatSelection(1).png)
+
+---
+
 ## ✨ Features
 
 - 🎬 Browse movies and shows
 - 🔍 View detailed movie information
+- 🎥 Watch movie trailers
 - 🕒 Select available show timings
 - 💺 Interactive seat selection
 - 🚫 Prevent booking already occupied seats
@@ -75,7 +92,10 @@ SidFlix allows users to discover movies, explore show details, select show timin
 ```text
 SidFlix/
 │
-├── assets/                     # Project images and screenshots
+├── assets/                     # Project screenshots
+│   ├── Homepage(1).png
+│   ├── Trailers(1).png
+│   └── SeatSelection(1).png
 │
 ├── client/                     # Frontend React application
 │   ├── public/
