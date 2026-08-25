@@ -12,30 +12,33 @@ import bookingRouter from "./routes/bookingRoutes.js";
 dotenv.config();
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
 
-// Connect Database
-connectDB();
+// ==========================
+// MIDDLEWARE
+// ==========================
 
-// Middleware
 app.use(express.json());
 
-// CORS
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
+      "https://sid-flix-unthinkable-solutions-iq00b3usc-sid007-v.vercel.app",
     ],
     credentials: true,
   })
 );
 
-// Clerk middleware
+// Clerk Middleware
 app.use(clerkMiddleware());
 
-// Test route
+// ==========================
+// ROUTES
+// ==========================
+
+// Test Route
 app.get("/", (req, res) => {
   res.json({
     success: true,
@@ -43,13 +46,16 @@ app.get("/", (req, res) => {
   });
 });
 
-// Routes
+// API Routes
 app.use("/api/show", showRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/user", userRouter);
 app.use("/api/booking", bookingRouter);
 
-// Error handler
+// ==========================
+// ERROR HANDLER
+// ==========================
+
 app.use((err, req, res, next) => {
   console.error("Server Error:", err);
 
@@ -59,6 +65,24 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+// ==========================
+// START SERVER
+// ==========================
+
+const startServer = async () => {
+  try {
+    // Wait for MongoDB connection first
+    await connectDB();
+
+    // Start Express server only after DB connects
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+      console.log("SidFlix backend is live");
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
