@@ -14,10 +14,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ==========================
-// MIDDLEWARE
-// ==========================
-
+// Middleware
 app.use(express.json());
 
 app.use(
@@ -25,20 +22,18 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://sid-flix-unthinkable-solutions-iq00b3usc-sid007-v.vercel.app",
+      "https://sid-flix-unthinkable-solutions-4ksp.vercel.app",
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-// Clerk Middleware
+// Clerk
 app.use(clerkMiddleware());
 
-// ==========================
-// ROUTES
-// ==========================
-
-// Test Route
+// Routes
 app.get("/", (req, res) => {
   res.json({
     success: true,
@@ -46,16 +41,12 @@ app.get("/", (req, res) => {
   });
 });
 
-// API Routes
 app.use("/api/show", showRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/user", userRouter);
 app.use("/api/booking", bookingRouter);
 
-// ==========================
-// ERROR HANDLER
-// ==========================
-
+// Error handler
 app.use((err, req, res, next) => {
   console.error("Server Error:", err);
 
@@ -65,19 +56,13 @@ app.use((err, req, res, next) => {
   });
 });
 
-// ==========================
-// START SERVER
-// ==========================
-
+// Start server only after MongoDB connects
 const startServer = async () => {
   try {
-    // Wait for MongoDB connection first
     await connectDB();
 
-    // Start Express server only after DB connects
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
-      console.log("SidFlix backend is live");
     });
   } catch (error) {
     console.error("Failed to start server:", error.message);
